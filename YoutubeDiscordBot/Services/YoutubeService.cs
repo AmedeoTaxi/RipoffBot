@@ -14,10 +14,6 @@ namespace YoutubeDiscordBot.Services
     public class YoutubeService : IYoutubeService
     {
         private readonly YoutubeClient _client;
-        public YoutubeClient Client
-        {
-            get { return _client; }
-        }
 
         public YoutubeService()
         {

@@ -40,8 +40,6 @@ namespace YoutubeDiscordBot.Commands.Modules
 
             await Context.Channel.SendMessageAsync($"Cerco: \"{query}\" sul tubo");
 
-            //var audioStreamInfo = await _youtubeService.GetAudioStreamInfo(query);
-
             //var convertedStream = ConvertStream(audioStream);
 
             var audioStreamInfo = await _youtubeService.GetAudioStreamInfo(query);
