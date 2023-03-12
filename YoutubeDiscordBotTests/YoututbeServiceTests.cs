@@ -1,6 +1,7 @@
 ﻿using Discord.Audio;
 using YoutubeDiscordBot.Services;
 using Xunit;
+using System.Configuration;
 
 namespace YoutubeDiscordBotTests
 {
@@ -13,7 +14,9 @@ namespace YoutubeDiscordBotTests
 
             var stream = await youtubeService.GetAudioStream("xtrullor gold");
 
-            using (var file = new FileStream("C:\\Users\\franf\\Desktop\\audiostream.bin", FileMode.CreateNew))
+            var path = ConfigurationManager.AppSettings["filePath"];
+
+            using (var file = new FileStream($"{path}audiostream.bin", FileMode.CreateNew))
             {
                 stream.CopyTo(file);
             }
